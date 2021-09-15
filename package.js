@@ -1,12 +1,12 @@
 Package.describe({
-  summary: 'Accounts Templates styled for Twitter Bootstrap.',
-  version: '1.14.2',
+  summary: 'Accounts Templates styled for Twitter Bootstrap. DL Modified',
+  version: '1.14.3',
   name: 'useraccounts:bootstrap',
   git: 'https://github.com/meteor-useraccounts/bootstrap.git',
 });
 
-Package.on_use(function(api, where) {
-  api.versionsFrom('METEOR@1.0');
+Package.onUse(function(api, where) {
+  api.versionsFrom(['METEOR@1.0','2.3']);
 
   api.use([
     'templating',
@@ -22,10 +22,10 @@ Package.on_use(function(api, where) {
   api.use('useraccounts:iron-routing@1.14.2', ['client', 'server'], {weak: true});
 
   api.imply([
-    'useraccounts:core@1.14.2',
+    'useraccounts:core',
   ], ['client', 'server']);
 
-  api.add_files([
+  api.addFiles([
     'lib/at_error.html',
     'lib/at_error.js',
     'lib/at_form.html',
@@ -67,10 +67,10 @@ Package.on_use(function(api, where) {
   ], ['client']);
 });
 
-Package.on_test(function(api) {
+Package.onTest(function(api) {
   api.use([
     'useraccounts:bootstrap',
-    'useraccounts:core@1.14.2',
+    'useraccounts:core',
   ]);
 
   api.use([
@@ -79,7 +79,7 @@ Package.on_test(function(api) {
     'test-helpers'
   ], ['client', 'server']);
 
-  api.add_files([
+  api.addFiles([
     'tests/tests.js'
   ], ['client', 'server']);
 });
