@@ -26,6 +26,11 @@
   margin-bottom: 30px;
   text-align: center;
 }
+
+.at-signin-btn {
+  text-align: center;
+}
+
 .at-error,
 .at-result {
   text-align: center;
